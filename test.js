@@ -24,7 +24,7 @@ var worklist = function (req, res) {
 }
 
 module.exports={
-  login
+  worklist
 }
 // module.exports = class Square {
 //   constructor(width) {
