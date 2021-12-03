@@ -9,7 +9,7 @@ const edgeDb=require("./database/edgecommon");
 
 const router = require('express').Router();
 
-connectDB();
+// connectDB();
 
 global.functions = require('./common/function.js');
 const instance = axios.create({
@@ -18,7 +18,7 @@ const instance = axios.create({
     maxContentLength: Infinity,
     baseURL: process.env.KOPS_BASE_URL
   });
-app.get("/login",async function(req,res)
+router.get("/login",async function(req,res)
 {
     console.log("**************printing export things*******************");
     console.log(process.env.REDIS_PORT);
@@ -33,8 +33,8 @@ router.get("/memberlist",function(req,res)
 res.send("memberlist api");
 });
 
-app.listen(3002, function () {
-    console.log('Example app listening on port 3002!');
-  });
-// module.exports = router;
+// app.listen(3002, function () {
+//     console.log('Example app listening on port 3002!');
+//   });
+module.exports = router;
 
