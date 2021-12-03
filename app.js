@@ -5,13 +5,13 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.json({ limit: '100mb' }));
 app.use(bodyParser.urlencoded({ limit: '100mb', extended: true }));
 const router = require('express').Router();
-
+global.functions = require('./common/functions.js');
 router.get("/login",function(req,res)
 {
     console.log("**************printing export things*******************");
-    console.log(rocess.env.REDIS_PORT);
-    console.log(rocess.env.REDIS_HOST);
-    console.log(rocess.env.CHECK);
+    console.log(process.env.REDIS_PORT);
+    console.log(process.env.REDIS_HOST);
+    console.log(process.env.CHECK);
 res.send("login api");
 });
 
